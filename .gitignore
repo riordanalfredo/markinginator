@@ -35,3 +35,8 @@ app-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Environment variables
+.env
+
+config/dev.exs
+config/test.exs
