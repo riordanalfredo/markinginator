@@ -4,20 +4,6 @@ defmodule App.TeachersFixtures do
   entities via the `App.Teachers` context.
   """
 
-  @doc """
-  Generate a teacher.
-  """
-  def teacher_fixture(attrs \\ %{}) do
-    {:ok, teacher} =
-      attrs
-      |> Enum.into(%{
-
-      })
-      |> App.Teachers.create_teacher()
-
-    teacher
-  end
-
   def unique_teacher_email, do: "teacher#{System.unique_integer()}@example.com"
   def valid_teacher_password, do: "hello world!"
 
