@@ -1,0 +1,14 @@
+<.header>
+  Assignment {@assignment.id}
+  <:subtitle>This is a assignment record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/assignments/#{@assignment}/edit"}>
+      <.button>Edit assignment</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+</.list>
+
+<.back navigate={~p"/assignments"}>Back to assignments</.back>

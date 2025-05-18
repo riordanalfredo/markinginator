@@ -1,0 +1,22 @@
+<.header>
+  Listing Feedbacks
+  <:actions>
+    <.link href={~p"/feedbacks/new"}>
+      <.button>New Feedback</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="feedbacks" rows={@feedbacks} row_click={&JS.navigate(~p"/feedbacks/#{&1}")}>
+  <:action :let={feedback}>
+    <div class="sr-only">
+      <.link navigate={~p"/feedbacks/#{feedback}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/feedbacks/#{feedback}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={feedback}>
+    <.link href={~p"/feedbacks/#{feedback}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

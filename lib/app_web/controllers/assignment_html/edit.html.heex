@@ -1,0 +1,8 @@
+<.header>
+  Edit Assignment {@assignment.id}
+  <:subtitle>Use this form to manage assignment records in your database.</:subtitle>
+</.header>
+
+<.assignment_form changeset={@changeset} action={~p"/assignments/#{@assignment}"} />
+
+<.back navigate={~p"/assignments"}>Back to assignments</.back>

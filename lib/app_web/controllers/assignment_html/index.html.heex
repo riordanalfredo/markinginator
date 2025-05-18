@@ -1,0 +1,22 @@
+<.header>
+  Listing Assignments
+  <:actions>
+    <.link href={~p"/assignments/new"}>
+      <.button>New Assignment</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="assignments" rows={@assignments} row_click={&JS.navigate(~p"/assignments/#{&1}")}>
+  <:action :let={assignment}>
+    <div class="sr-only">
+      <.link navigate={~p"/assignments/#{assignment}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/assignments/#{assignment}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={assignment}>
+    <.link href={~p"/assignments/#{assignment}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

@@ -1,0 +1,8 @@
+<.header>
+  Edit Feedback {@feedback.id}
+  <:subtitle>Use this form to manage feedback records in your database.</:subtitle>
+</.header>
+
+<.feedback_form changeset={@changeset} action={~p"/feedbacks/#{@feedback}"} />
+
+<.back navigate={~p"/feedbacks"}>Back to feedbacks</.back>

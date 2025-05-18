@@ -1,0 +1,14 @@
+<.header>
+  Feedback {@feedback.id}
+  <:subtitle>This is a feedback record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/feedbacks/#{@feedback}/edit"}>
+      <.button>Edit feedback</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+</.list>
+
+<.back navigate={~p"/feedbacks"}>Back to feedbacks</.back>
