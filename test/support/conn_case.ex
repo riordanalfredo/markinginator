@@ -35,4 +35,30 @@ defmodule AppWeb.ConnCase do
     App.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
+
+  @doc """
+  Setup helper that registers and logs in teachers.
+
+      setup :register_and_log_in_teacher
+
+  It stores an updated connection and a registered teacher in the
+  test context.
+  """
+  def register_and_log_in_teacher(%{conn: conn}) do
+    teacher = App.TeachersFixtures.teacher_fixture()
+    %{conn: log_in_teacher(conn, teacher), teacher: teacher}
+  end
+
+  @doc """
+  Logs the given `teacher` into the `conn`.
+
+  It returns an updated `conn`.
+  """
+  def log_in_teacher(conn, teacher) do
+    token = App.Teachers.generate_teacher_session_token(teacher)
+
+    conn
+    |> Phoenix.ConnTest.init_test_session(%{})
+    |> Plug.Conn.put_session(:teacher_token, token)
+  end
 end

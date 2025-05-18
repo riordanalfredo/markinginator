@@ -91,7 +91,7 @@ defmodule App.Students do
   ## Examples
 
       iex> change_student(student)
-      %Todo{...}
+      %Student{...}
 
   """
   def change_student(%Student{} = student, attrs \\ %{}) do
